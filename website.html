@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software & Tools Download Center</title>
+    <!-- Tailwind CSS CDN for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Khmer Font (Kantumruy Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                    DevTools Hub
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#" class="hover:text-blue-400 transition-colors">ទំព័រដើម</a>
+                <a href="#tools" class="hover:text-blue-400 transition-colors">កម្មវិធីទាំងអស់</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">អំពីយើង</a>
+            </nav>
+
+            <button class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-blue-600/30">
+                <i class="fa-solid fa-code-branch mr-2"></i> វើហ្សិន 1.0
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 px-4 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-600/10 via-indigo-600/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1.5 rounded-full border border-blue-500/20 uppercase tracking-wider mb-4 inline-block">
+                ✨ ឥតគិតថ្លៃ & សុវត្ថិភាព 100%
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                មជ្ឈមណ្ឌលទាញយក <br>
+                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                    Software & Desktop Tools
+                </span>
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+                ប្រមូលផ្តុំទៅដោយកម្មវិធី ក៏ដូចជាឧបករណ៍ (Tools) ជំនួយស្វ័យប្រវត្តិកម្មផ្សេងៗ ដែលត្រូវបានបង្កើតឡើងដើម្បីសម្រួលដល់ការងាររបស់អ្នក។
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="searchInput" onkeyup="searchTools()" placeholder="ស្វែងរកកម្មវិធី ឬ Tool..." 
+                       class="w-full bg-slate-800/80 border border-slate-700/80 rounded-2xl py-4 pl-12 pr-4 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid Section -->
+    <section id="tools" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-fire text-orange-500"></i> កម្មវិធីពេញនិយម
+            </h2>
+            <span id="toolCount" class="text-sm text-slate-400">បង្ហាញ 3 កម្មវិធី</span>
+        </div>
+
+        <!-- Cards Container -->
+        <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Tool Card 1 -->
+            <div class="tool-card bg-slate-800/50 border border-slate-700/60 rounded-2xl p-6 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">v1.2.0</span>
+                </div>
+                <h3 class="tool-title text-xl font-bold text-white mb-2">Khmer Text-to-Speech Tool</h3>
+                <p class="tool-desc text-slate-400 text-sm mb-6 line-clamp-2">
+                    កម្មវិធីសម្រាប់ធ្វើកត់ចំណាំការងារប្រចាំថ្ងៃ Windows 10/11។
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-700/50 text-xs text-slate-400">
+                    <span><i class="fa-solid fa-hard-drive mr-1"></i> 45 MB</span>
+                    <a href="https://drive.google.com/file/d/1sh2tjG9vSRaOILAnrAVNfPidls4xUIKd/view?usp=drive_link" download class="bg-slate-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 group-hover:bg-blue-600">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tool Card 2 -->
+            <div class="tool-card bg-slate-800/50 border border-slate-700/60 rounded-2xl p-6 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl group-hover:bg-purple-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">v2.0.1</span>
+                </div>
+                <h3 class="tool-title text-xl font-bold text-white mb-2">Auto Watermark & Resizer</h3>
+                <p class="tool-desc text-slate-400 text-sm mb-6 line-clamp-2">
+                    Tool សម្រាប់ដាក់ Logo/Watermark លើរូបថតផលិតផលម្ដងបានច្រើនរូប និងពង្រីកបង្រួមទំហំរូបថត។
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-700/50 text-xs text-slate-400">
+                    <span><i class="fa-solid fa-hard-drive mr-1"></i> 18 MB</span>
+                    <a href="#" download class="bg-slate-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 group-hover:bg-blue-600">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tool Card 3 -->
+            <div class="tool-card bg-slate-800/50 border border-slate-700/60 rounded-2xl p-6 hover:border-blue-500/50 transition-all hover:-translate-y-1 group">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-2xl group-hover:bg-orange-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 font-medium">v1.0.0</span>
+                </div>
+                <h3 class="tool-title text-xl font-bold text-white mb-2">Excel Product Importer Tool</h3>
+                <p class="tool-desc text-slate-400 text-sm mb-6 line-clamp-2">
+                    ឧបករណ៍ជំនួយរៀបចំទិន្នន័យទំនិញពី Excel ទៅកាន់ប្រព័ន្ធ E-commerce យ៉ាងងាយស្រួល។
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-700/50 text-xs text-slate-400">
+                    <span><i class="fa-solid fa-hard-drive mr-1"></i> 12 MB</span>
+                    <a href="#" download class="bg-slate-700 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-all flex items-center gap-2 group-hover:bg-blue-600">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-slate-500 text-sm mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 DevTools Hub. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+            <p class="text-xs mt-2 text-slate-600">បង្កើតឡើងដើម្បីចែករំលែក Tools និង កម្មវិធីប្រយោជន៍ផ្សេងៗ</p>
+        </div>
+    </footer>
+
+    <!-- Search Logic JavaScript -->
+    <script>
+        function searchTools() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('tool-card');
+            let visibleCount = 0;
+
+            for (let i = 0; i = 0) {
+                cards[i].style.display = "";
+                visibleCount++;
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+        document.getElementById('toolCount').innerText = `បង្ហាញ ${visibleCount} កម្មវិធី`;
+    }
+    </script>
+</body>
+</html>
